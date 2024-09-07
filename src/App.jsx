@@ -1,7 +1,7 @@
 import "./App.css";
 import UserLayout from "./layout/UserLayout";
 import NavBar from "./components/NavBar";
-import Card from "./components/Card";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <NavBar />
       <div className="container flex p-4 mx-auto space-x-4">
         <UserLayout />
-        <Card />
+        <Dashboard />
       </div>
     </>
   );
