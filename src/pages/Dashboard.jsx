@@ -1,6 +1,13 @@
 import Card from "../components/Card";
+import SubjectProgressionChart from "../components/SubjectProgressionChart";
 
 const Dashboard = () => {
+  const subjectInfo = [
+    { name: "Science", color: "bg-amber-500", value: 75 },
+    { name: "Socials", color: "bg-teal-500", value: 45 },
+    { name: "Maths", color: "bg-lime-500", value: 90 },
+    { name: "English", color: "bg-rose-500", value: 25 },
+  ];
   return (
     <div className="container flex">
       <div className="flex-col max w-5/12">
@@ -45,7 +52,16 @@ const Dashboard = () => {
           </p>
         </Card>
 
-        <Card title="Subject progression"></Card>
+        <Card title="Subject progression">
+          {subjectInfo.map((subject) => (
+            <SubjectProgressionChart
+              key={subject.name}
+              color={subject.color}
+              value={subject.value}
+              subject={subject.name}
+            />
+          ))}
+        </Card>
       </div>
       <div className="flex-col max w-2/3">
         <Card title="Learning style" />

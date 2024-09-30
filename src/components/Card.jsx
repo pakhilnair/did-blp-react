@@ -14,7 +14,7 @@ const Card = ({ title, children }) => {
               </span>
             </FontAwesomeIcon>
           </div>
-          <div class="flex-grow border-t border-gray-700 my-2 pb-2" />
+          <div className="flex-grow border-t border-gray-700 my-2 pb-2" />
         </>
       )}
       {children}
