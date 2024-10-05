@@ -1,9 +1,11 @@
 import { faC, faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Card = ({ title, children }) => {
+const Card = ({ title, children, customStyle }) => {
   return (
-    <div className="h-fit p-4 m-4 bg-gray-800 bg-opacity-60 rounded-md">
+    <div
+      className={`${customStyle} h-fit p-4 mx-2 mb-4 mt-1 bg-gray-800 bg-opacity-60 rounded-md`}
+    >
       {title && (
         <>
           <div className="flex justify-between items-center">
@@ -14,7 +16,7 @@ const Card = ({ title, children }) => {
               </span>
             </FontAwesomeIcon>
           </div>
-          <div className="flex-grow border-t border-gray-700 my-2 pb-2" />
+          <div className="flex-grow border-t border-gray-700 my-2 pb-1" />
         </>
       )}
       {children}

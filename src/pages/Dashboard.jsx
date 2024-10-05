@@ -1,5 +1,8 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Card from "../components/Card";
 import SubjectProgressionChart from "../components/SubjectProgressionChart";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
+import PerformanceChart from "../components/PerformanceChart";
 
 const Dashboard = () => {
   const subjectInfo = [
@@ -26,9 +29,9 @@ const Dashboard = () => {
                 <br />
                 <strong>Ranga Annan</strong>
               </p>
-              <p className="text-gray-500 text-sm">Class : 6th</p>
-              <p className="text-gray-500 text-sm">Age : 12</p>
-              <p className="text-gray-500 text-sm">Branch : Kochi</p>
+              <p className="text-gray-400 text-sm">Class : 6th</p>
+              <p className="text-gray-400 text-sm">Age : 12</p>
+              <p className="text-gray-400 text-sm">Branch : Kochi</p>
             </div>
           </div>
         </Card>
@@ -41,7 +44,7 @@ const Dashboard = () => {
           <p className="text-md">
             Total classes : <span className="text-amber-500 text-lg">60</span>
           </p>
-          <p className="text-gray-500 text-sm mt-2">As on Sept. 11 2024</p>
+          <p className="text-gray-400 text-sm mt-2">As on Sept. 11 2024</p>
         </Card>
 
         <Card title="MBT Indicator">
@@ -62,10 +65,33 @@ const Dashboard = () => {
             />
           ))}
         </Card>
+
+        <Card title="Health score">
+          <p className="text-md">
+            <span className="text-amber-500 text-lg">65%, </span>Healthy weight
+          </p>
+          <p className="text-sm mt-2">Weight : 50kg</p>
+          <p className="text-sm mt-2">Height : 145cm</p>
+        </Card>
       </div>
+
       <div className="flex-col max w-2/3">
-        <Card title="Learning style" />
-        <Card title="Performance at Brainloop" />
+        <Card title="Learning style">
+          <div className="flex items-center">
+            <FontAwesomeIcon className="p-2 mr-2" icon={faEye} size="2x" />
+            <div>
+              <p className="text-md mb-1">Ranga is a visual leraner</p>
+              <p className="text-sm text-gray-400 h-">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Placeat quidem unde quisquam, animi debitis odio cumque.
+              </p>
+            </div>
+          </div>
+        </Card>
+
+        <Card title="Performance at Brainloop" customStyle="h-96">
+          <PerformanceChart />
+        </Card>
       </div>
     </div>
   );
