@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Line } from "react-chartjs-2";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -87,6 +89,11 @@ const chartData = {
 const PerformanceChart = () => {
   const [currentSubject, setCurrentSubject] = useState(subjects[0]);
   const [selectedMonth, setSelectedMonth] = useState(null);
+  const [dropdownIsOpen, setDropdownIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setDropdownIsOpen(!dropdownIsOpen);
+  };
 
   const data = {
     labels: ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept"],
@@ -97,7 +104,7 @@ const PerformanceChart = () => {
         backgroundColor: chartData[currentSubject].backgroundColor,
         fill: true,
         tension: 0.3,
-        pointRadius: 6,
+        pointRadius: 7,
       },
     ],
   };
@@ -132,11 +139,8 @@ const PerformanceChart = () => {
 
   return (
     <div className="flex flex-col">
-      <div className="flex p-1">
-        <div className="w-4/5 mr-4">
-          <Line data={data} options={options} />
-        </div>
-        <div className="w-1/5 pr-2">
+      <div className="flex-auto md:flex md:flex-row-reverse md:p-1 relative">
+        <div className="hidden md:block w-full md:w-1/5 pr-2 mt-1">
           {subjects.map((subject) => (
             <button
               key={subject}
@@ -151,17 +155,58 @@ const PerformanceChart = () => {
             </button>
           ))}
         </div>
+
+        <div className="flex justify-end  md:hidden content-end">
+          <button
+            onClick={toggleDropdown}
+            className={`w-28 rounded-md text-sm text-white py-2 ${chartData[currentSubject].btnColor}`}
+          >
+            {currentSubject}
+            <FontAwesomeIcon className="ml-1" icon={faChevronDown} size="sm" />
+          </button>
+        </div>
+        {dropdownIsOpen && (
+          <div className="absolute right-0 z-10 mt-2 w-28 origin-top-right rounded-md bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+            {subjects.map((subject) => (
+              <button
+                key={subject}
+                onClick={() => {
+                  setCurrentSubject(subject);
+                  toggleDropdown();
+                }}
+                className={`w-full mb-2 py-1 px-2 rounded-md text-sm ${
+                  currentSubject === subject
+                    ? `${chartData[currentSubject].btnColor} text-white active:border-gray-800`
+                    : `bg-transparent text-gray-300 hover:bg-gray-800 hover:border-gray-800`
+                }`}
+              >
+                {subject}
+              </button>
+            ))}
+          </div>
+        )}
+
+        <div className="w-full md:w-4/5 md:mr-2">
+          <Line data={data} options={options} />
+        </div>
       </div>
       <div className="p-4 mt-8">
         <p className="text-gray-50 text-md font-bold">Feedback from teachers</p>
         {selectedMonth !== null ? (
           <div className="mt-4">
-            <p className="text-gray-200 text-sm">
-              {chartData[currentSubject].feedback[selectedMonth]}
-            </p>
+            {chartData[currentSubject].feedback[selectedMonth] !== undefined ? (
+              <p className="text-gray-200 text-sm">
+                {chartData[currentSubject].feedback[selectedMonth]}
+              </p>
+            ) : (
+              <p className="text-gray-500 text-sm italic">
+                No feedback recorded for the selected month.
+              </p>
+            )}
+            {/* {console.log(chartData[currentSubject].feedback[selectedMonth])} */}
           </div>
         ) : (
-          <div className="mt-2">
+          <div className="mt-4">
             <p className="text-gray-500 text-sm italic">
               Please click on a chart node to see feedback
             </p>

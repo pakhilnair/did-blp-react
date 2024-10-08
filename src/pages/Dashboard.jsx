@@ -12,11 +12,11 @@ const Dashboard = () => {
     { name: "English", color: "bg-rose-500", value: 25 },
   ];
   return (
-    <div className="container flex">
-      <div className="flex-col max w-5/12">
+    <div className="md:flex mx-auto">
+      <div className="flex flex-col w-full md:w-4/12">
         <Card>
           <div className="flex ">
-            <div className="w-1/3 mr-2">
+            <div className="w-1/3 mr-2 mt-2">
               <img
                 src="../src/assets/avatar.png"
                 alt="user-avatar"
@@ -34,17 +34,6 @@ const Dashboard = () => {
               <p className="text-gray-400 text-sm">Branch : Kochi</p>
             </div>
           </div>
-        </Card>
-
-        <Card title="Attendance">
-          <p className="text-md">
-            Classes attended :{" "}
-            <span className="text-amber-500 text-lg">55</span>
-          </p>
-          <p className="text-md">
-            Total classes : <span className="text-amber-500 text-lg">60</span>
-          </p>
-          <p className="text-gray-400 text-sm mt-2">As on Sept. 11 2024</p>
         </Card>
 
         <Card title="MBT Indicator">
@@ -75,7 +64,18 @@ const Dashboard = () => {
         </Card>
       </div>
 
-      <div className="flex-col max w-2/3">
+      <div className="flex flex-col w-full md:w-8/12">
+        <Card title="Attendance">
+          <p className="text-md">
+            Classes attended :{" "}
+            <span className="text-amber-500 text-lg">55</span>
+          </p>
+          <p className="text-md">
+            Total classes : <span className="text-amber-500 text-lg">60</span>
+          </p>
+          <p className="text-gray-400 text-sm mt-2">As on Sept. 11 2024</p>
+        </Card>
+
         <Card title="Learning style">
           <div className="flex items-center">
             <FontAwesomeIcon className="p-2 mr-2" icon={faEye} size="2x" />

@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <div className="container flex p-4 mx-auto space-x-4">
+      <div className="container flex p-4 mx-auto md:space-x-4">
         <UserLayout />
         <Dashboard />
       </div>

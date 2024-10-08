@@ -16,8 +16,8 @@ const userLayout = () => {
     { name: "Profile", icon: faUser, route: "/student/profile" },
   ];
   return (
-    <div className="sidebar h-screen">
-      <div className="flex flex-col justify-evenly">
+    <div className="sidebar h-screen hidden md:block">
+      <div className="flex-col justify-evenly">
         {sidebarItems.map((item, index) => (
           <SideBarItem item={item.name} icon={item.icon} key={index} />
         ))}

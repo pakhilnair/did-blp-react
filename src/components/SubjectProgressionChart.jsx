@@ -1,8 +1,8 @@
 const SubjectProgressionChart = ({ color, value, subject = "test" }) => {
   return (
     <div className="flex items-center my-4">
-      <div className="w-1/4">
-        <p>{subject}</p>
+      <div className="w-2/6">
+        <p className="text-sm">{subject}</p>
       </div>
       <div className="w-full h-6 bg-gray-700 rounded-md overflow-hidden relative">
         <div
