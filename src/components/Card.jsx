@@ -18,9 +18,8 @@ const Card = ({ title, children, tooltipText = null, customStyle }) => {
             <h2 className="font-bold text-1xl">{title}</h2>
             {tooltipText && (
               <FontAwesomeIcon
-                className="cursor-pointer"
+                className="cursor-pointer mr-1"
                 icon={faCircleInfo}
-                size="md"
                 onMouseEnter={showToolTip}
                 onMouseLeave={hideToolTip}
               />
@@ -29,9 +28,9 @@ const Card = ({ title, children, tooltipText = null, customStyle }) => {
               <div className="absolute top-full right-0 z-10 shadow-lgp-1 bg-gray-600 text-sm rounded-md py-2 px-4 mt-2 max-w-72">
                 {tooltipText}
                 <div
-                  className="absolute right-1 transform -translate-y-8 translate-x-0 w-0 h-0 
-                border-l-4 border-l-transparent border-r-4 border-transparent 
-                border-b-4 border-b-gray-600"
+                  className="absolute right-1 transform -translate-y-24 w-0 h-0 
+                border-l-8 border-l-transparent border-r-8 border-transparent 
+                border-b-8 border-b-gray-600"
                 ></div>
               </div>
             )}

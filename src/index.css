@@ -15,7 +15,6 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* margin: 40px; */
   --science-color: #ffb800;
   --socials-color: #3219ca;
   --maths-color: #00bc62;
@@ -72,14 +71,6 @@ button:hover {
   width: 250px;
   max-width: 20%;
 }
-
-/* .tooltip {
-  @apply invisible absolute;
-}
-
-.has-tooltip:hover .tooltip {
-  @apply visible z-50;
-} */
 
 .user-avatar {
   border-radius: 100px;
