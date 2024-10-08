@@ -12,7 +12,7 @@ const Dashboard = () => {
     { name: "English", color: "bg-rose-500", value: 25 },
   ];
   return (
-    <div className="md:flex mx-auto">
+    <div className="container md:flex mx-auto">
       <div className="flex flex-col w-full md:w-4/12">
         <Card>
           <div className="flex ">
@@ -36,7 +36,11 @@ const Dashboard = () => {
           </div>
         </Card>
 
-        <Card title="MBT Indicator">
+        <Card
+          title="MBT Indicator"
+          tooltipText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Id officia perferendis 
+          quam distinctio assumenda deserunt."
+        >
           <p className="text-md text-amber-500">Explorers - Virtuoso - ISTP</p>
           <p className="text-sm mt-2">
             Smart, Energetic, Very Perceptive. People who enjoy living on the
@@ -44,7 +48,11 @@ const Dashboard = () => {
           </p>
         </Card>
 
-        <Card title="Subject progression">
+        <Card
+          title="Subject progression"
+          tooltipText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Id officia perferendis 
+          quam distinctio assumenda deserunt."
+        >
           {subjectInfo.map((subject) => (
             <SubjectProgressionChart
               key={subject.name}
@@ -55,7 +63,11 @@ const Dashboard = () => {
           ))}
         </Card>
 
-        <Card title="Health score">
+        <Card
+          title="Health score"
+          tooltipText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Id officia perferendis 
+          quam distinctio assumenda deserunt."
+        >
           <p className="text-md">
             <span className="text-amber-500 text-lg">65%, </span>Healthy weight
           </p>
@@ -76,7 +88,11 @@ const Dashboard = () => {
           <p className="text-gray-400 text-sm mt-2">As on Sept. 11 2024</p>
         </Card>
 
-        <Card title="Learning style">
+        <Card
+          title="Learning style"
+          tooltipText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Id officia perferendis 
+          quam distinctio assumenda deserunt."
+        >
           <div className="flex items-center">
             <FontAwesomeIcon className="p-2 mr-2" icon={faEye} size="2x" />
             <div>
@@ -89,7 +105,12 @@ const Dashboard = () => {
           </div>
         </Card>
 
-        <Card title="Performance at Brainloop" customStyle="h-96">
+        <Card
+          title="Performance at Brainloop"
+          tooltipText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Id officia perferendis 
+          quam distinctio assumenda deserunt."
+          customStyle="h-96"
+        >
           <PerformanceChart />
         </Card>
       </div>
