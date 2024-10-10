@@ -6,15 +6,6 @@ import Learning from "./pages/Learning";
 import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
-  // return <RouterProvider router={router} />;
-  // <>
-  //   <NavBar />
-  //   <div className="container flex p-4 mx-auto md:space-x-4">
-  //     <UserLayout />
-  //     <Dashboard />
-  //   </div>
-  // </>
-
   return (
     <BrowserRouter>
       <Routes>

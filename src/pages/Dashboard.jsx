@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Card from "../components/Card";
 import SubjectProgressionChart from "../components/SubjectProgressionChart";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
-import PerformanceChart from "../components/PerformanceChart";
+import PerfAtBlChart from "../components/PerfAtBlChart";
 
 const Dashboard = () => {
   const subjectInfo = [
@@ -111,7 +111,7 @@ const Dashboard = () => {
           quam distinctio assumenda deserunt."
           customStyle="h-96"
         >
-          <PerformanceChart />
+          <PerfAtBlChart />
         </Card>
       </div>
     </div>
