@@ -1,15 +1,19 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { NavLink } from "react-router-dom";
 
-const SideBarItem = ({ item, icon }) => {
+const SideBarItem = ({ item, icon, route }) => {
+  const linkClass = (isActive) => {
+    isActive ? "bg-gray-800" : "";
+  };
+
   return (
-    <div
-      className={`flex items-center rounded-md p-4 my-1 hover:bg-gray-800 hover:cursor-pointer active:bg-gray-800 ${
-        item === "Dashboard" ? "bg-gray-800" : ""
-      }`}
+    <NavLink
+      to={`${route}`}
+      className={`flex items-center rounded-md p-4 my-1 hover:bg-gray-800 hover:cursor-pointer ${linkClass} `}
     >
       <FontAwesomeIcon className="mr-4" icon={icon} />
       <p className="text-1xl text-gray-100">{item}</p>
-    </div>
+    </NavLink>
   );
 };
 
