@@ -29,7 +29,7 @@ const chartData = {
     data: [33, 38, 52, 41, 64, 75, 61, 70, 84],
     borderColor: "#f59e0b",
     backgroundColor: "rgba(252, 211, 77, 0.25)",
-    btnColor: "bg-amber-500",
+    btnColor: "border-amber-500",
     feedback: [
       "January sales were strong due to new year promotions.",
       "February saw a slight dip, likely due to post-holiday lull.",
@@ -44,7 +44,7 @@ const chartData = {
     data: [14, 25, 52, 37, 61, 75, 87, 8, 32],
     borderColor: "#14b8a6",
     backgroundColor: "rgba(94, 234, 212, 0.25)",
-    btnColor: "bg-teal-500",
+    btnColor: "border-teal-500",
     feedback: [
       "January traffic was low due to reduced marketing spend.",
       "February saw increased traffic from Valentine's Day campaign.",
@@ -59,7 +59,7 @@ const chartData = {
     data: [80, 65, 74, 94, 90, 82, 88, 97, 85],
     borderColor: "#84cc16",
     backgroundColor: "rgba(190, 242, 100, 0.25)",
-    btnColor: "bg-lime-500",
+    btnColor: "border-lime-500",
     feedback: [
       "January conversions were average.",
       "February saw high conversions due to improved product recommendations.",
@@ -74,7 +74,7 @@ const chartData = {
     data: [25, 58, 44, 76, 71, 85, 55, 68, 84],
     borderColor: "#f43f5e",
     backgroundColor: "rgba(253, 164, 175, 0.25)",
-    btnColor: "bg-rose-500",
+    btnColor: "border-rose-500",
     feedback: [
       "January traffic was low due to reduced marketing spend.",
       "February saw increased traffic from Valentine's Day campaign.",
@@ -147,8 +147,8 @@ const PerfAtBlChart = () => {
               onClick={() => setCurrentSubject(subject)}
               className={`w-full mb-2 py-2 px-2 rounded-md text-sm ${
                 currentSubject === subject
-                  ? `${chartData[currentSubject].btnColor} text-white active:border-gray-800`
-                  : `bg-transparent text-gray-300 hover:bg-gray-800 hover:border-gray-800`
+                  ? `${chartData[currentSubject].btnColor} text-white bg-transparent shadow-lg shadow-gray-900`
+                  : `bg-transparent text-gray-400 hover:bg-gray-800 hover:border-gray-800 hover:shadow-md `
               }`}
             >
               {subject}
@@ -203,7 +203,6 @@ const PerfAtBlChart = () => {
                 No feedback recorded for the selected month.
               </p>
             )}
-            {/* {console.log(chartData[currentSubject].feedback[selectedMonth])} */}
           </div>
         ) : (
           <div className="mt-4">
