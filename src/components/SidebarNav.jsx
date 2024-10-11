@@ -16,20 +16,21 @@ const SidebarNav = (toggleSidebar) => {
           className="max-w-32 ml-10"
         />
       </NavLink>
-      <div className="mt-4">
+      <div className="mt-10">
         {sidebarItems.map((item, index) => (
-          <NavLink
-            key={index}
-            to={item.route}
-            className={({ isActive }) =>
-              `flex items-center py-4 pl-10 my-2 hover:bg-gray-800 hover:cursor-pointer rounded-e-lg
+          <div onClick={() => toggleSidebar()}>
+            <NavLink
+              key={index}
+              to={item.route}
+              className={({ isActive }) =>
+                `flex items-center py-4 pl-10 my-2 hover:bg-gray-800 hover:cursor-pointer rounded-e-lg
                 ${isActive ? "bg-gray-800" : "bg-transparent"}`
-            }
-            onClick={() => toggleSidebar()}
-          >
-            <FontAwesomeIcon className="mr-4" icon={item.icon} />
-            <p className="text-1xl text-gray-100">{item.name}</p>
-          </NavLink>
+              }
+            >
+              <FontAwesomeIcon className="mr-4" icon={item.icon} />
+              <p className="text-1xl text-gray-100">{item.name}</p>
+            </NavLink>
+          </div>
         ))}
       </div>
     </div>
