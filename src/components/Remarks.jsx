@@ -18,7 +18,7 @@ const Remarks = ({ avatar, name, postedDate, subject, message }) => {
         </div>
       </div>
 
-      <div className="text-gray-300 text-sm pt-1">{message}</div>
+      <div className="text-gray-300 text-sm pt-1 pl-1">{message}</div>
     </div>
   );
 };

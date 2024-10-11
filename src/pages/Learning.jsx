@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import SubjectAbility from "../components/SubjectAbility";
 import Remarks from "../components/Remarks";
+import { useState, useEffect, useRef } from "react";
+import SidebarRemarks from "../components/SidebarRemarks";
 
 const Learning = () => {
   const remarks = [
@@ -50,8 +52,19 @@ const Learning = () => {
     { name: "English", color: "bg-rose-500", value: 25 },
   ];
 
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
-    <div className="container md:flex mx-auto">
+    <div className="container md:flex mx-auto ">
+      {isSidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black opacity-50 z-10"
+          onClick={() => setIsSidebarOpen(false)}
+        />
+      )}
       <div className="flex flex-col w-full md:w-8/12">
         <Card
           title="Learning style"
@@ -124,12 +137,19 @@ const Learning = () => {
               message={remark.message}
             />
           ))}
+
           {remarks.length > 3 && (
             <div className="flex items-end justify-end">
-              <button className="text-sm border-1 border-gray-600 cursor-pointer py-1 rounded-md">
+              <button
+                className="text-sm border-1 border-gray-600 cursor-pointer py-1 rounded-md"
+                onClick={toggleSidebar}
+              >
                 View all
               </button>
             </div>
+          )}
+          {isSidebarOpen && (
+            <SidebarRemarks remarks={remarks} toggleSidebar={toggleSidebar} />
           )}
         </Card>
       </div>
