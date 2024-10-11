@@ -21,7 +21,7 @@ const userLayout = () => {
   return (
     <>
       <NavBar />
-      <div className="container flex p-4 mx-auto md:space-x-4">
+      <div className="container flex p-1 mx-auto md:space-x-4">
         <div className="sidebar h-screen hidden md:block">
           <div className="flex-col justify-evenly">
             {sidebarItems.map((item, index) => (

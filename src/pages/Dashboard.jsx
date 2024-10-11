@@ -16,14 +16,14 @@ const Dashboard = () => {
       <div className="flex flex-col w-full md:w-4/12">
         <Card>
           <div className="flex ">
-            <div className="w-1/3 mr-2 mt-2">
+            <div className="w-4/12 mr-2 mt-2">
               <img
                 src="../src/assets/avatar.png"
                 alt="user-avatar"
                 className="user-avatar"
               />
             </div>
-            <div className="w-7/12 ml-2">
+            <div className="w-8/12 ml-2">
               <p className="text-lg py-2">
                 Welcome
                 <br />

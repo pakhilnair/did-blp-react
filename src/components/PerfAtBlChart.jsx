@@ -176,7 +176,7 @@ const PerfAtBlChart = () => {
                 }}
                 className={`w-full mb-2 py-1 px-2 rounded-md text-sm ${
                   currentSubject === subject
-                    ? `${chartData[currentSubject].btnColor} text-white active:border-gray-800`
+                    ? `${chartData[currentSubject].btnColor} text-white active:border-gray-800 shadow-md`
                     : `bg-transparent text-gray-300 hover:bg-gray-800 hover:border-gray-800`
                 }`}
               >
