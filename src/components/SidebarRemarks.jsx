@@ -4,7 +4,7 @@ import Remarks from "./Remarks";
 const SidebarRemarks = ({ remarks, toggleSidebar }) => {
   return (
     <div
-      className="flex flex-col p-10 fixed top-0 right-0 h-full w-80 z-10 md:w-96 bg-gray-800 text-white transform 
+      className="flex flex-col p-10 fixed top-0 right-0 h-full w-80 z-10 md:w-96 bg-gray-900 text-white transform 
             translate-x-0 transition-transform duration-300 ease-in-out overflow-y-auto"
     >
       <div className="flex justify-end">

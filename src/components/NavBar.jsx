@@ -5,25 +5,31 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import SidebarNav from "./SidebarNav";
 
 const NavBar = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
     <nav className="container p-6 mx-auto">
+      <div className="container md:flex mx-auto ">
+        {isSidebarOpen && (
+          <div
+            className="fixed inset-0 bg-black opacity-50 z-10"
+            onClick={() => setIsSidebarOpen(false)}
+          />
+        )}
+      </div>
       <div className="flex items-center justify-between md:justify-items-center">
-        <div className="md:hidden pr-2">
+        <div className="md:hidden pr-2" onClick={toggleSidebar}>
           <FontAwesomeIcon icon={faBars} size="xl" />
         </div>
+        {isSidebarOpen && <SidebarNav toggleSidebar={toggleSidebar} />}
         <NavLink to="/">
-          {/* <div className="flex items-center">
-            <p className="md:hidden text-3xl pr-2">
-              <FontAwesomeIcon icon={faBars} />
-            </p>
-            <div className="flex-col">
-              <p className="text-xs text-blue-600">BRAINLOOP</p>
-              <p className="text-sm md:text-1xl">Deep identification</p>
-            </div>
-          </div> */}
-
           <img
             src="../../public/logo.png"
             alt="Brainloop logo"

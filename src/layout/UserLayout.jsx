@@ -1,23 +1,9 @@
-import {
-  faGauge,
-  faHeartCircleCheck,
-  faBookOpen,
-  faBrain,
-  faUser,
-} from "@fortawesome/free-solid-svg-icons";
 import NavBar from "../components/NavBar";
 import { Outlet, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import sidebarItems from "../data/sidebarItems";
 
 const userLayout = () => {
-  const sidebarItems = [
-    { name: "Dashboard", icon: faGauge, route: "/" },
-    { name: "Learning", icon: faBookOpen, route: "/learning" },
-    { name: "Health", icon: faHeartCircleCheck, route: "/health" },
-    { name: "Mind", icon: faBrain, route: "/mind" },
-    { name: "Profile", icon: faUser, route: "/profile" },
-  ];
-
   return (
     <>
       <NavBar />

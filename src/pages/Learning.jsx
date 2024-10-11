@@ -141,7 +141,7 @@ const Learning = () => {
           {remarks.length > 3 && (
             <div className="flex items-end justify-end">
               <button
-                className="text-sm border-1 border-gray-600 cursor-pointer py-1 rounded-md"
+                className="text-sm w-28 border-1 border-gray-600 cursor-pointer py-1 rounded-md"
                 onClick={toggleSidebar}
               >
                 View all
