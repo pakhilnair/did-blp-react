@@ -31,7 +31,7 @@ const NavBar = () => {
         {isSidebarOpen && <SidebarNav toggleSidebar={toggleSidebar} />}
         <NavLink to="/">
           <img
-            src="../../public/logo.png"
+            src="logo.png"
             alt="Brainloop logo"
             className="max-w-28 md:max-w-36"
           />

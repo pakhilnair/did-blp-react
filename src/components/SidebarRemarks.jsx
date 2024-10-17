@@ -1,7 +1,7 @@
 import React from "react";
 import Remarks from "./Remarks";
 
-const SidebarRemarks = ({ remarks, toggleSidebar }) => {
+const SidebarRemarks = ({ teachersRemarks, toggleSidebar }) => {
   return (
     <div
       className="flex flex-col p-10 fixed top-0 right-0 h-full w-80 z-10 md:w-96 bg-gray-900 text-white transform 
@@ -16,7 +16,7 @@ const SidebarRemarks = ({ remarks, toggleSidebar }) => {
         </button>
       </div>
       <div>
-        {remarks.map((remark, index) => (
+        {teachersRemarks.map((remark, index) => (
           <Remarks
             key={index}
             name={remark.teacherName}

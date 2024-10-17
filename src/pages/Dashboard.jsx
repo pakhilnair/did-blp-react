@@ -3,14 +3,9 @@ import Card from "../components/Card";
 import SubjectProgressionChart from "../components/SubjectProgressionChart";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import PerfAtBlChart from "../components/PerfAtBlChart";
+import subjectInfo from "../data/subjectInfo";
 
 const Dashboard = () => {
-  const subjectInfo = [
-    { name: "Science", color: "bg-amber-500", value: 75 },
-    { name: "Socials", color: "bg-teal-500", value: 45 },
-    { name: "Maths", color: "bg-lime-500", value: 90 },
-    { name: "English", color: "bg-rose-500", value: 25 },
-  ];
   return (
     <div className="container md:flex mx-auto">
       <div className="flex flex-col w-full md:w-4/12">
