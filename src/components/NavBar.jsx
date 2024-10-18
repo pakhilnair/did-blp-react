@@ -38,7 +38,7 @@ const NavBar = () => {
         </NavLink>
 
         <div className="hidden md:flex items-center">
-          <p className="text-sm">Raman Kartha</p>
+          <p className="text-sm">Ranga Annan</p>
           <p className="pl-1">
             <FontAwesomeIcon icon={faChevronDown} size="sm" />
           </p>
