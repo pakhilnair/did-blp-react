@@ -1,6 +1,9 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Card from "../components/Card";
 import HealthScoreTable from "../components/HealthScoreTable";
 import { testDates, tableData } from "../data/HealthScoreTableData";
+import { doctorAnalysis, healthCheckupData } from "../data/healthCheckupsData";
+import HealthCheckupCard from "../components/HealthCheckupCard";
 
 const Health = () => {
   return (
@@ -39,12 +42,18 @@ const Health = () => {
           title="Health checkups"
           tooltipText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Id officia perferendis
           quam distinctio assumenda deserunt."
-        ></Card>
+        >
+          <div className="grid grid-cols-2">
+            <HealthCheckupCard healthCheckupData={healthCheckupData} />
+          </div>
+        </Card>
         <Card
           title="Doctor's analysis"
           tooltipText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Id officia perferendis
           quam distinctio assumenda deserunt."
-        ></Card>
+        >
+          <p className="text-sm">{doctorAnalysis}</p>
+        </Card>
       </div>
     </div>
   );
