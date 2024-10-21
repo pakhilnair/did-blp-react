@@ -5,6 +5,7 @@ import { Route, Routes, Link, BrowserRouter } from "react-router-dom";
 import Learning from "./pages/Learning";
 import NotFoundPage from "./pages/NotFoundPage";
 import Health from "./pages/Health";
+import Mind from "./pages/Mind";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route index element={<Dashboard />} />
           <Route path="/learning" element={<Learning />} />
           <Route path="/health" element={<Health />} />
+          <Route path="/mind" element={<Mind />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
